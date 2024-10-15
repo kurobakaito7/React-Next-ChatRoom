@@ -101,7 +101,7 @@ align-items: center;
 flex-wrap: wrap;
 width:35%;
 height: 100%;
-background-color: #946127c5;
+background-color: #376CB7;
 overflow-y: scroll;
 ::-webkit-scrollbar
 {
@@ -130,11 +130,11 @@ overflow-y: scroll;
     }
     .username{
         font-size: 20px;
-        color: #e67f09;
+        color: #fff;
     }
     transition: all 0.5s;
     :hover{
-        background-color: #e67f09;
+        background-color: #fff;
         cursor: pointer;
         .username{
             font-weight : bold;

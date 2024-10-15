@@ -141,9 +141,9 @@ position: relative;
       height: 10vh;
       font-size: 1.5vw;
       font-family: 'Times New Roman';
-      color: #13a7bbde;
+      color: #d2b108d4;
       margin-left: 5%;
-        border-radius: 10px;
+      border-radius: 10px;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -153,7 +153,7 @@ position: relative;
       height: 10vh;
       font-size: 1.5vw;
       font-family: 'Times New Roman';
-      color: #d2b108d4;
+      color: #1677FF;
       transform: translateX(-7%);
       border-radius: 10px;
       display: flex;
@@ -168,12 +168,13 @@ position: relative;
       .input{
         display:block;
         width: 100%;
-        height: 100%;
-        background-color: transparent;
-        border: 1px solid #0ecbb8;
+        height: 75%;
+        background: #fff;
+        opacity: 0.8;
+        border: 1px solid #fff;
         overflow: hidden;
         font-size: 1.5vw;
-        color: #d2b108d4;
+        color: blue;
         :focus{
           outline: none;
         }
@@ -181,7 +182,7 @@ position: relative;
       .send{
         width: 5vw;
         height: 2vw;
-        background-color: #0ecbb8;
+        background-color: #1677FF;
         position: absolute;
         right: 5%;
         bottom: 6%;

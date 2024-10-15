@@ -26,12 +26,12 @@ const Home: NextPage = () => {
     })
   }
   async function register(values: FormData) {
-   return  axios.post(`${httpHost}auth/register`, {
+    return axios.post(`${httpHost}auth/register`, {
       username: values.username,
-     password: values.password,
-     avatar:`https://api.multiavatar.com/Binx%${Math.floor((Math.random() * 50000))}.png`
+      password: values.password,
+      avatar: `https://api.multiavatar.com/Binx%${Math.floor((Math.random() * 50000))}.png`
     })
-        
+
   }
   async function login(values: FormData) {
     axios.post(`${httpHost}auth/login`, values).then(
@@ -88,69 +88,70 @@ const Home: NextPage = () => {
     };
   }
 
-    return (
-      <Container>
-        <img className='background' src={pciture.src} alt="" />
-        <Form
-          name="basic"
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          autoComplete="off"
-          className='form'
+  return (
+    <Container>
+      <Form
+        name="basic"
+        labelCol={{ span: 8 }}
+        wrapperCol={{ span: 16 }}
+        initialValues={{ remember: true }}
+        onFinish={onFinish}
+        autoComplete="off"
+        className='form'
+      >
+        <Form.Item
+          label="输入用户名："
+          name="username"
+          className='form-item'
+          rules={[{ required: true, message: '请输入用户名' }]}
         >
-          <Form.Item
-            label="输入用户名："
-            name="username"
-            className='form-item'
-            rules={[{ required: true, message: '请输入用户名' }]}
-          >
-            <Input />
-          </Form.Item>
+          <Input />
+        </Form.Item>
 
-          <Form.Item
-            label="请输入密码："
-            name="password"
-            className='form-item'
-            rules={[{ required: true, message: '请输入密码' }]}
-          >
-            <Input.Password />
-          </Form.Item>
+        <Form.Item
+          label="请输入密码："
+          name="password"
+          className='form-item'
+          rules={[{ required: true, message: '请输入密码' }]}
+        >
+          <Input.Password />
+        </Form.Item>
 
-          <Form.Item
-            label="请确认密码："
-            name="confirmedPassword"
-            className='form-item'
-            rules={[{ required: true, message: '请确认密码' }]}
-          >
-            <Input.Password></Input.Password>
-          </Form.Item>
+        <Form.Item
+          label="请确认密码："
+          name="confirmedPassword"
+          className='form-item'
+          rules={[{ required: true, message: '请确认密码' }]}
+        >
+          <Input.Password></Input.Password>
+        </Form.Item>
 
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" htmlType="submit" className='submit-btn'>
-              登录
-            </Button>
+        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+          <Button type="primary" htmlType="submit" className='submit-btn'>
+            登录
+          </Button>
 
-          </Form.Item>
-          <p>
-            新用户未注册会自动注册并登录
-          </p>
-        </Form>
+        </Form.Item>
+        <p style={{color: '#fff'}}>
+          新用户未注册会自动注册并登录
+        </p>
+      </Form>
 
-      </Container>
+    </Container>
 
-    )
-  }
-  const Container = style.div`
+  )
+}
+const Container = style.div`
    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    background: url(${pciture.src}) no-repeat;
+    background-size: cover;
     .form{
-      background: #fff;
+      background: #0c162d;
       width: 30vw;
       height: 50vh;
       display: flex;
@@ -158,11 +159,11 @@ const Home: NextPage = () => {
       justify-content: center;
       align-items: center;
       box-shadow: 5px 5px 30px #109fb27b;
-      opacity: 0.5;
+      opacity: 0.8;
       label{
-            color: #0e77eede;
+            color: #1677FF;
             margin-right: 10px;
-            font-size: 16px;
+            font-size: 15px;
       }
     }
     .form-item{
@@ -179,9 +180,8 @@ const Home: NextPage = () => {
       :hover{
         background: #3f0eeede;
         color: #ffffff;
-        border-color: #3f0eeede;
       }
     }
     `
 
-  export default Home
+export default Home
